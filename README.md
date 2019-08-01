@@ -85,7 +85,6 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 以pytorch 1.1.0-cuda10.0-cudnn7.5-devel為範例
 ```cmd
 r07127@Velkoz:~$ docker run --gpus all --name=r07127_pytorch_1.1 -it --shm-size 16G -v /home/r07127:/r07127 pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-devel bash
-root@336dc392dea0:/workspace#
 ```
 `--gpus all` 使用全部的GPU   
 `--name` 設定 container 的名稱   
