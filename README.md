@@ -56,7 +56,7 @@ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 docker exec -it <Container ID> bash
 ```
 ## 範例(以Velkoz為例)
-查看目前 images
+查看目前 images  
 可以看到目前已有許多不同版本的Pytorch以及Tensorflow可供使用
 ```cmd
 r07127@Velkoz:~$ docker image ls
@@ -75,13 +75,13 @@ tensorflow/tensorflow      1.10.0-gpu-py3                  0b4ceed1758b        1
 pytorch/pytorch            0.4.1-cuda9-cudnn7-devel        3febd5b72fb0        12 months ago       5.23GB
 pytorch/pytorch            0.4-cuda9-cudnn7-devel          63994d8624a2        13 months ago       4.71GB
 ```
-查看目前全部的 container
+查看目前全部的 container  
 可以發現目前沒有任何被建立的container
 ```cmd
 r07127@Velkoz:~$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
-新建並啟動 Container
+新建並啟動 Container  
 以pytorch 1.1.0-cuda10.0-cudnn7.5-devel為範例
 ```cmd
 r07127@Velkoz:~$ docker run --gpus all --name=r07127_pytorch_1.1 -it --shm-size 16G -v /home/r07127:/r07127 pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-devel bash
