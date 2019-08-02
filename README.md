@@ -96,7 +96,7 @@ r07127@Velkoz:~$ docker run --gpus all --name=r07127_pytorch_1.1 -it --shm-size 
 * `pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-devel` 要用來啟動container的Image檔  
 * `bash` 你要執行的指令, 可以先打bash, 進入container後在下其他指令    
   
-輸入pip list確定pytorch版本為1.1.0
+輸入`pip list`確定pytorch版本為1.1.0
 ```cmd
 root@336dc392dea0:/workspace# pip list
 Package          Version
@@ -154,7 +154,7 @@ urllib3          1.24.2
 wcwidth          0.1.7
 wheel            0.33.1
 ```
-輸入nvcc --version確認cuda版本為10.0
+輸入`nvcc --version`確認cuda版本為10.0
 ```cmd
 root@336dc392dea0:/workspace# nvcc --version
 nvcc: NVIDIA (R) Cuda compiler driver
