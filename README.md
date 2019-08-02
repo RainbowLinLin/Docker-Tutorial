@@ -162,7 +162,7 @@ Copyright (c) 2005-2018 NVIDIA Corporation
 Built on Sat_Aug_25_21:08:01_CDT_2018
 Cuda compilation tools, release 10.0, V10.0.130
 ```
-確認以上版本都是自己需要的以後
+確認以上版本都是自己需要的以後  
 移動到自己link進container的資料夾, 並且執行自己的程式(此處以pytorch_mnist.py為例)
 ```cmd
 root@336dc392dea0:/workspace# cd ../r07127/Docker-Tutorial/
