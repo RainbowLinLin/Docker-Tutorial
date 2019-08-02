@@ -96,6 +96,73 @@ r07127@Velkoz:~$ docker run --gpus all --name=r07127_pytorch_1.1 -it --shm-size 
 * `pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-devel` 要用來啟動container的Image檔  
 * `bash` 你要執行的指令, 可以先打bash, 進入container後在下其他指令    
   
+輸入pip list確定pytorch版本為1.1.0
+```cmd
+root@336dc392dea0:/workspace# pip list
+Package          Version
+---------------- --------
+asn1crypto       0.24.0
+backcall         0.1.0
+beautifulsoup4   4.7.1
+certifi          2019.3.9
+cffi             1.12.3
+chardet          3.0.4
+conda            4.6.14
+conda-build      3.17.8
+cryptography     2.6.1
+decorator        4.4.0
+filelock         3.0.10
+glob2            0.6
+idna             2.8
+ipython          7.5.0
+ipython-genutils 0.2.0
+jedi             0.13.3
+Jinja2           2.10.1
+libarchive-c     2.8
+lief             0.9.0
+MarkupSafe       1.1.1
+mkl-fft          1.0.12
+mkl-random       1.0.2
+numpy            1.16.3
+olefile          0.46
+parso            0.4.0
+pexpect          4.7.0
+pickleshare      0.7.5
+Pillow           6.0.0
+pip              19.1
+pkginfo          1.5.0.1
+prompt-toolkit   2.0.9
+psutil           5.6.2
+ptyprocess       0.6.0
+pycosat          0.6.3
+pycparser        2.19
+Pygments         2.3.1
+pyOpenSSL        19.0.0
+PySocks          1.6.8
+pytz             2019.1
+PyYAML           5.1
+requests         2.21.0
+ruamel-yaml      0.15.46
+setuptools       41.0.1
+six              1.12.0
+soupsieve        1.8
+torch            1.1.0
+torchvision      0.2.2
+tqdm             4.31.1
+traitlets        4.3.2
+urllib3          1.24.2
+wcwidth          0.1.7
+wheel            0.33.1
+```
+輸入nvcc --version確認cuda版本為10.0
+```cmd
+root@336dc392dea0:/workspace# nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2018 NVIDIA Corporation
+Built on Sat_Aug_25_21:08:01_CDT_2018
+Cuda compilation tools, release 10.0, V10.0.130
+```
+確認以上版本都是自己需要的以後
 移動到自己link進container的資料夾, 並且執行自己的程式(此處以pytorch_mnist.py為例)
 ```cmd
 root@336dc392dea0:/workspace# cd ../r07127/Docker-Tutorial/
