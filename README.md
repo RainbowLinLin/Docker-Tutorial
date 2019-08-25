@@ -53,7 +53,8 @@ docker rm [OPTIONS] CONTAINER [CONTAINER...]
 進入 Container
 ```cmd
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
-docker exec -it <Container ID> bash
+docker exec -it <Container ID> bash (以root進入container)
+docker exec -it --user $(id -u):$(id -g) <Container ID> bash (以自己的user name進入container)
 ```
 ## 範例(以Velkoz為例)
 查看目前 images  
@@ -81,7 +82,7 @@ pytorch/pytorch            0.4-cuda9-cudnn7-devel          63994d8624a2        1
 r07127@Velkoz:~$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
-新建並啟動 Container  
+新建並啟動 Container (先用root權限創建並安裝所需套件) 
 以pytorch 1.1.0-cuda10.0-cudnn7.5-devel為範例
 ```cmd
 r07127@Velkoz:~$ docker run --gpus all --name=r07127_pytorch_1.1 -it --shm-size 16G -v /home/r07127:/r07127 pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-devel bash
@@ -96,7 +97,7 @@ r07127@Velkoz:~$ docker run --gpus all --name=r07127_pytorch_1.1 -it --shm-size 
 * `pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-devel` 要用來啟動container的Image檔  
 * `bash` 你要執行的指令, 可以先打bash, 進入container後在下其他指令    
   
-輸入`pip list`確定pytorch版本為1.1.0
+輸入`pip list`確定pytorch版本為1.1.0並安裝自己所需的套件
 ```cmd
 root@336dc392dea0:/workspace# pip list
 Package          Version
