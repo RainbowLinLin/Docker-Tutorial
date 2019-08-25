@@ -50,6 +50,10 @@ docker restart [OPTIONS] CONTAINER [CONTAINER...]
 ```cmd
 docker rm [OPTIONS] CONTAINER [CONTAINER...]
 ```
+離開 Container 但任務繼續執行
+```cmd
+先 Ctrl-p 再 Ctrl-q.
+```
 進入 Container
 ```cmd
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
