@@ -16,7 +16,7 @@ Container 也可以被啟動、開始、停止、刪除，並且互相分離。
 
 查看目前 images
 ```cmd
-docker images ls
+docker image ls
 ```
 刪除 Image
 ```cmd
